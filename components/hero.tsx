@@ -60,7 +60,7 @@ export function Hero({ stats }: HeroProps) {
         </div>
         <div className="chips">
           <LiveStat value={stats.githubRepos} label="public repos" />
-          <LiveStat value={stats.githubFollowers} label="GitHub followers" />
+          <LiveStat value={stats.githubStars} label="GitHub stars" />
           <LiveStat value="4" label="live projects" />
           <LiveStat value="IIT-KGP" label="math & computing '26" />
         </div>

@@ -495,9 +495,7 @@ export function Terminal() {
             emit([
               [
                 { text: "  GitHub".padEnd(16), tone: "muted" },
-                {
-                  text: `${s.githubFollowers.toLocaleString()} followers · ${s.githubRepos.toLocaleString()} repos`,
-                },
+                { text: `${s.githubRepos.toLocaleString()} public repos` },
               ],
               [
                 { text: "  Stars".padEnd(16), tone: "muted" },
