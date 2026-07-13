@@ -21,5 +21,5 @@ export const metadata: Metadata = {
 };
 
 export default function ConnexaCaseStudyPage() {
-  return <CaseStudy />;
+  return <CaseStudy cs={connexaCaseStudy} />;
 }

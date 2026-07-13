@@ -50,6 +50,7 @@ export const projects: Project[] = [
       "An open-source ETL orchestrator where you design data pipelines by dragging nodes into a DAG, then schedule them and watch them run in real time. Built on FastAPI, Celery and Redis with a split control/data-plane design, and live telemetry streamed over WebSockets.",
     tags: ["FastAPI", "Celery", "Redis", "React", "TypeScript", "React Flow"],
     links: [{ label: "GitHub", href: "https://github.com/akansha2026/SynqX" }],
+    caseStudy: true,
   },
   {
     slug: "windows-calculator",
@@ -122,6 +123,8 @@ export const coursework: string[] = [
 
 export type Decision = { title: string; detail: string };
 export type CaseStudy = {
+  slug: string;
+  title: string;
   tagline: string;
   stack: string[];
   links: Link[];
@@ -132,6 +135,8 @@ export type CaseStudy = {
 };
 
 export const connexaCaseStudy: CaseStudy = {
+  slug: "connexa",
+  title: "Connexa",
   tagline: "A real-time chat platform built end to end — fast, reliable, and live.",
   stack: ["Next.js 15", "TypeScript", "Express", "Prisma", "WebSockets"],
   links: [
@@ -169,6 +174,51 @@ export const connexaCaseStudy: CaseStudy = {
     "Real-time one-on-one and group chat with presence, typing, and read receipts.",
     "Full-stack TypeScript across the board: Next.js 15, Express, Prisma.",
   ],
+};
+
+export const synqxCaseStudy: CaseStudy = {
+  slug: "synqx",
+  title: "SynqX",
+  tagline: "An open-source ETL orchestrator you drive by dragging boxes into a graph.",
+  stack: ["FastAPI", "Celery", "Redis", "React", "TypeScript", "React Flow", "PostgreSQL"],
+  links: [{ label: "GitHub", href: "https://github.com/akansha2026/SynqX" }],
+  problem:
+    "Moving data between systems usually means one-off scripts that are hard to schedule, hard to watch, and hard to reuse. I wanted something visual instead: build a pipeline once, see it as a graph, and actually watch it run.",
+  approach:
+    "SynqX splits into a control plane and a data plane. The control plane — FastAPI with Celery and Redis — schedules work and tracks every run. The data plane does the real extract, transform, and load, and can run through a separate agent so it sits close to the data. You compose a pipeline as a DAG on a React Flow canvas.",
+  decisions: [
+    {
+      title: "Control plane / data plane split",
+      detail:
+        "The API and scheduler are separate from the workers that move data, so a heavy job never freezes the interface and the data plane can run wherever the data lives.",
+    },
+    {
+      title: "Pluggable connectors",
+      detail:
+        "Every source and destination is a connector behind one common interface (SQL, Redis, and more), so adding a new system doesn't mean touching the engine.",
+    },
+    {
+      title: "Live telemetry over WebSockets",
+      detail:
+        "Each run streams its progress and logs to the UI as it happens, so you watch a pipeline move instead of refreshing a table.",
+    },
+    {
+      title: "Versioned metadata store",
+      detail:
+        "Alembic migrations and a typed schema keep the metadata database consistent as the platform changes.",
+    },
+  ],
+  results: [
+    "Design pipelines visually as a DAG and run them on a schedule.",
+    "Control plane on FastAPI, Celery and Redis, with a separate agent for running close to the data.",
+    "A pluggable connector system with real-time run telemetry over WebSockets.",
+  ],
+};
+
+/** Case studies keyed by project slug, for the /work/[slug] route. */
+export const caseStudies: Record<string, CaseStudy> = {
+  connexa: connexaCaseStudy,
+  synqx: synqxCaseStudy,
 };
 
 export const socials: Link[] = [
