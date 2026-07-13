@@ -35,8 +35,8 @@ export const projects: Project[] = [
     slug: "connexa",
     title: "Connexa",
     blurb:
-      "A real-time chat platform I built end to end — one-on-one and group messaging with typing indicators, read receipts, and live presence, all flowing over WebSockets. Backed by Express and Prisma with Redis in front of the hot paths so it stays snappy under load. It's live today.",
-    tags: ["Next.js 15", "TypeScript", "Express", "Prisma", "WebSockets", "Redis"],
+      "A real-time chat platform I built end to end — one-on-one and group messaging with typing indicators, read receipts, and live presence, all flowing over WebSockets. Backed by Express and Prisma, with the queries and hot paths tuned so it stays snappy under load. It's live today.",
+    tags: ["Next.js 15", "TypeScript", "Express", "Prisma", "WebSockets"],
     links: [
       { label: "Live", href: "https://connexa-app.vercel.app" },
       { label: "GitHub", href: "https://github.com/akansha2026/Connexa" },
@@ -133,7 +133,7 @@ export type CaseStudy = {
 
 export const connexaCaseStudy: CaseStudy = {
   tagline: "A real-time chat platform built end to end — fast, reliable, and live.",
-  stack: ["Next.js 15", "TypeScript", "Express", "Prisma", "WebSockets", "Redis"],
+  stack: ["Next.js 15", "TypeScript", "Express", "Prisma", "WebSockets"],
   links: [
     { label: "Live", href: "https://connexa-app.vercel.app" },
     { label: "GitHub", href: "https://github.com/akansha2026/Connexa" },
@@ -141,7 +141,7 @@ export const connexaCaseStudy: CaseStudy = {
   problem:
     "Real-time chat looks simple until you actually build it. Messages have to arrive instantly, presence and typing state must stay in sync for everyone in a room, and the whole thing has to hold together when lots of people are online at once.",
   approach:
-    "A full-stack TypeScript app: a Next.js 15 frontend talking to an Express backend over WebSockets, Prisma on PostgreSQL for storage, and Redis in front of the hot paths to keep messaging low-latency under concurrent load.",
+    "A full-stack TypeScript app: a Next.js 15 frontend talking to an Express backend over WebSockets, with Prisma on PostgreSQL for storage. I tuned the queries and the busiest paths to keep messaging low-latency under concurrent load.",
   decisions: [
     {
       title: "WebSockets for everything live",
@@ -149,9 +149,9 @@ export const connexaCaseStudy: CaseStudy = {
         "One-on-one and group messaging, typing indicators, read receipts, and presence all flow over one real-time channel — so the UI reflects what's happening the moment it happens.",
     },
     {
-      title: "Redis-cached hot paths",
+      title: "Tuned queries on the hot paths",
       detail:
-        "Frequently read data is cached in Redis and queries are tuned, so messaging stays snappy even with many rooms and users active at the same time.",
+        "Careful Prisma queries and indexing on the busiest paths keep messaging snappy even with many rooms and users active at the same time.",
     },
     {
       title: "Auth done properly",
@@ -167,7 +167,7 @@ export const connexaCaseStudy: CaseStudy = {
   results: [
     "Live today at connexa-app.vercel.app.",
     "Real-time one-on-one and group chat with presence, typing, and read receipts.",
-    "Full-stack TypeScript across the board: Next.js 15, Express, Prisma, Redis.",
+    "Full-stack TypeScript across the board: Next.js 15, Express, Prisma.",
   ],
 };
 
